@@ -1,6 +1,6 @@
 locals {
   ami_id = "ami-09e67e426f25ce0d7"
-  vpc_id = "vpc-0827c764f71604395"
+  vpc_id = "vpc-0a393a781fb001f71"
   ssh_user = "ubuntu"
   key_name = "Demokey"
   private_key_path = "/home/labsuser/assign/Demokey.pem"
@@ -8,9 +8,9 @@ locals {
 
 provider "aws" {
   region     = "us-east-1"
-  access_key = "ASIAT4GHWILYESSAYGW2"
-  secret_key = "s9OqPy0tyw70whNTCTslGB+FLd8ahkQ6qmYQTMMH"
-  token = "FwoGZXIvYXdzECoaDLEVFYfRw1CbFP98eyKzAW/huuRiGK/T1d+OmpdNj9cLTMV+pSc0KK5hN4ntd+7UDP2vNfR7L8Z6A25NM1ZsSDmo05xC7QCVRULzdst5eUiiUpsbRzLVZNQ6xZ1S6kh3c4mtvBlBZ3vsW+CUNboUGO8/CvJZFn/monbuvdx0gGdRufyahWks5/pMFOwGqpZgR6aR/XQGHD40KDiIC4L2sm2dxgqfQSC66cJZjD38aZWQtSF7yWpCKKh+AQW8/pCkReN2KKXnvJkGMi2ZJ3UxgcWHlZOKA5RIq/HPUdMQC2oF0QPSqeYyzqfkUuandC2E3fk/ho7ndwE="
+  access_key = "ASIAT4GHWILYJ6LQDSQE"
+  secret_key = "sGYNYtA+70pOffK/Qtet3fSuYqIqNx1zl8AokO0+"
+  token = "FwoGZXIvYXdzEGEaDOwfDJzemYnPFOMSYyKzAWBn7XSRgfOxY4hf2ReAcmom4r3jgN3Lyc6r63dzFrOXvm11ebX49v6xcJY8GAifEzPKuLER2XYBnWbQQ5uOFR5qfWo3bNoQ9dxCZC6sXCL1ZbKx+s1KxMG+zTr1peucuqph4IoTN9+oxq5Rq3mtAUQRfLn+cFJweptOIIdzU6FbDJf0QLacpnKdsq5FhqvWSW5dp80wfWJlwc6AbjAXPZ6spL4Ux+CgeC/mMeWyPWNRpf9rKO30yJkGMi3EdecFmnVIhywpFN35JRdvFfe5hpj0gzgBHU4eP6J5PmuPWnQEW6VPGvO6zAg="
 }
 
 resource "aws_security_group" "demoaccess" {

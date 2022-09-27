@@ -1,0 +1,10 @@
+---
+# defaults file for wordpress
+wp_install_path: '/var/www'
+wp_directory_name: 'tmickler'
+wp_db_name: 'name'
+wp_db_username: 'nm'
+wp_db_password: "22"
+wp_db_host: 'hos'
+wp_table_prefix: 'wpzcx_'
+wp_debug_mode: 'FALSE'
