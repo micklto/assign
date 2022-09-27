@@ -1,0 +1,283 @@
+[0m[1maws_security_group.demoaccess: Refreshing state... [id=sg-00f0ca2c743895d4c][0m
+[0m[1maws_instance.web: Refreshing state... [id=i-00815665b9a2c9aa8][0m
+[0m
+[1m[36mNote:[0m[1m Objects have changed outside of Terraform[0m
+
+[0mTerraform detected the following changes made outside of Terraform since the
+last "terraform apply" which may have affected this plan:
+
+[1m  # aws_instance.web[0m has been deleted[0m[0m
+[0m  [31m-[0m[0m resource "aws_instance" "web" {
+        [1m[0mid[0m[0m                                   = "i-00815665b9a2c9aa8"
+      [31m-[0m [0m[1m[0mpublic_ip[0m[0m                            = "54.86.234.92" [90m->[0m [0m[90mnull[0m[0m
+        [1m[0mtags[0m[0m                                 = {
+            "Name" = "Demo ec2"
+        }
+        [90m# (30 unchanged attributes hidden)[0m[0m
+
+        [90m# (7 unchanged blocks hidden)[0m[0m
+    }
+
+[1m  # aws_security_group.demoaccess[0m has been deleted[0m[0m
+[0m  [31m-[0m[0m resource "aws_security_group" "demoaccess" {
+      [31m-[0m [0m[1m[0mid[0m[0m                     = "sg-00f0ca2c743895d4c" [90m->[0m [0m[90mnull[0m[0m
+        [1m[0mname[0m[0m                   = "demoaccess"
+        [90m# (8 unchanged attributes hidden)[0m[0m
+    }
+
+
+Unless you have made equivalent changes to your configuration, or ignored the
+relevant attributes using ignore_changes, the following plan may include
+actions to undo or respond to these changes.
+[90m
+─────────────────────────────────────────────────────────────────────────────[0m
+
+Terraform used the selected providers to generate the following execution
+plan. Resource actions are indicated with the following symbols:
+  [32m+[0m create
+[0m
+Terraform will perform the following actions:
+
+[1m  # aws_instance.web[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_instance" "web" {
+      [32m+[0m [0m[1m[0mami[0m[0m                                  = "ami-09e67e426f25ce0d7"
+      [32m+[0m [0m[1m[0marn[0m[0m                                  = (known after apply)
+      [32m+[0m [0m[1m[0massociate_public_ip_address[0m[0m          = true
+      [32m+[0m [0m[1m[0mavailability_zone[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mcpu_core_count[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mcpu_threads_per_core[0m[0m                 = (known after apply)
+      [32m+[0m [0m[1m[0mdisable_api_stop[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mdisable_api_termination[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mebs_optimized[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mget_password_data[0m[0m                    = false
+      [32m+[0m [0m[1m[0mhost_id[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0mhost_resource_group_arn[0m[0m              = (known after apply)
+      [32m+[0m [0m[1m[0mid[0m[0m                                   = (known after apply)
+      [32m+[0m [0m[1m[0minstance_initiated_shutdown_behavior[0m[0m = (known after apply)
+      [32m+[0m [0m[1m[0minstance_state[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0minstance_type[0m[0m                        = "t2.micro"
+      [32m+[0m [0m[1m[0mipv6_address_count[0m[0m                   = (known after apply)
+      [32m+[0m [0m[1m[0mipv6_addresses[0m[0m                       = (known after apply)
+      [32m+[0m [0m[1m[0mkey_name[0m[0m                             = "Demokey"
+      [32m+[0m [0m[1m[0mmonitoring[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0moutpost_arn[0m[0m                          = (known after apply)
+      [32m+[0m [0m[1m[0mpassword_data[0m[0m                        = (known after apply)
+      [32m+[0m [0m[1m[0mplacement_group[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0mplacement_partition_number[0m[0m           = (known after apply)
+      [32m+[0m [0m[1m[0mprimary_network_interface_id[0m[0m         = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_dns[0m[0m                          = (known after apply)
+      [32m+[0m [0m[1m[0mprivate_ip[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_dns[0m[0m                           = (known after apply)
+      [32m+[0m [0m[1m[0mpublic_ip[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0msecondary_private_ips[0m[0m                = (known after apply)
+      [32m+[0m [0m[1m[0msecurity_groups[0m[0m                      = (known after apply)
+      [32m+[0m [0m[1m[0msource_dest_check[0m[0m                    = true
+      [32m+[0m [0m[1m[0msubnet_id[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0mtags[0m[0m                                 = {
+          [32m+[0m [0m"Name" = "Demo ec2"
+        }
+      [32m+[0m [0m[1m[0mtags_all[0m[0m                             = {
+          [32m+[0m [0m"Name" = "Demo ec2"
+        }
+      [32m+[0m [0m[1m[0mtenancy[0m[0m                              = (known after apply)
+      [32m+[0m [0m[1m[0muser_data[0m[0m                            = (known after apply)
+      [32m+[0m [0m[1m[0muser_data_base64[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0muser_data_replace_on_change[0m[0m          = false
+      [32m+[0m [0m[1m[0mvpc_security_group_ids[0m[0m               = (known after apply)
+
+      [32m+[0m [0mcapacity_reservation_specification {
+          [32m+[0m [0m[1m[0mcapacity_reservation_preference[0m[0m = (known after apply)
+
+          [32m+[0m [0mcapacity_reservation_target {
+              [32m+[0m [0m[1m[0mcapacity_reservation_id[0m[0m                 = (known after apply)
+              [32m+[0m [0m[1m[0mcapacity_reservation_resource_group_arn[0m[0m = (known after apply)
+            }
+        }
+
+      [32m+[0m [0mebs_block_device {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mencrypted[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0miops[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mkms_key_id[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0msnapshot_id[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mtags[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mthroughput[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_id[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_size[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_type[0m[0m           = (known after apply)
+        }
+
+      [32m+[0m [0menclave_options {
+          [32m+[0m [0m[1m[0menabled[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mephemeral_block_device {
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m  = (known after apply)
+          [32m+[0m [0m[1m[0mno_device[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mvirtual_name[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mmaintenance_options {
+          [32m+[0m [0m[1m[0mauto_recovery[0m[0m = (known after apply)
+        }
+
+      [32m+[0m [0mmetadata_options {
+          [32m+[0m [0m[1m[0mhttp_endpoint[0m[0m               = (known after apply)
+          [32m+[0m [0m[1m[0mhttp_put_response_hop_limit[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mhttp_tokens[0m[0m                 = (known after apply)
+          [32m+[0m [0m[1m[0minstance_metadata_tags[0m[0m      = (known after apply)
+        }
+
+      [32m+[0m [0mnetwork_interface {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_index[0m[0m          = (known after apply)
+          [32m+[0m [0m[1m[0mnetwork_card_index[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0mnetwork_interface_id[0m[0m  = (known after apply)
+        }
+
+      [32m+[0m [0mprivate_dns_name_options {
+          [32m+[0m [0m[1m[0menable_resource_name_dns_a_record[0m[0m    = (known after apply)
+          [32m+[0m [0m[1m[0menable_resource_name_dns_aaaa_record[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mhostname_type[0m[0m                        = (known after apply)
+        }
+
+      [32m+[0m [0mroot_block_device {
+          [32m+[0m [0m[1m[0mdelete_on_termination[0m[0m = (known after apply)
+          [32m+[0m [0m[1m[0mdevice_name[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mencrypted[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0miops[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mkms_key_id[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mtags[0m[0m                  = (known after apply)
+          [32m+[0m [0m[1m[0mthroughput[0m[0m            = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_id[0m[0m             = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_size[0m[0m           = (known after apply)
+          [32m+[0m [0m[1m[0mvolume_type[0m[0m           = (known after apply)
+        }
+    }
+
+[1m  # aws_security_group.demoaccess[0m will be created[0m[0m
+[0m  [32m+[0m[0m resource "aws_security_group" "demoaccess" {
+      [32m+[0m [0m[1m[0marn[0m[0m                    = (known after apply)
+      [32m+[0m [0m[1m[0mdescription[0m[0m            = "Managed by Terraform"
+      [32m+[0m [0m[1m[0megress[0m[0m                 = [
+          [32m+[0m [0m{
+              [32m+[0m [0mcidr_blocks      = [
+                  [32m+[0m [0m"0.0.0.0/0",
+                ]
+              [32m+[0m [0mdescription      = ""
+              [32m+[0m [0mfrom_port        = 0
+              [32m+[0m [0mipv6_cidr_blocks = []
+              [32m+[0m [0mprefix_list_ids  = []
+              [32m+[0m [0mprotocol         = "-1"
+              [32m+[0m [0msecurity_groups  = []
+              [32m+[0m [0mself             = false
+              [32m+[0m [0mto_port          = 0
+            },
+        ]
+      [32m+[0m [0m[1m[0mid[0m[0m                     = (known after apply)
+      [32m+[0m [0m[1m[0mingress[0m[0m                = [
+          [32m+[0m [0m{
+              [32m+[0m [0mcidr_blocks      = [
+                  [32m+[0m [0m"0.0.0.0/0",
+                ]
+              [32m+[0m [0mdescription      = ""
+              [32m+[0m [0mfrom_port        = 22
+              [32m+[0m [0mipv6_cidr_blocks = []
+              [32m+[0m [0mprefix_list_ids  = []
+              [32m+[0m [0mprotocol         = "tcp"
+              [32m+[0m [0msecurity_groups  = []
+              [32m+[0m [0mself             = false
+              [32m+[0m [0mto_port          = 22
+            },
+          [32m+[0m [0m{
+              [32m+[0m [0mcidr_blocks      = [
+                  [32m+[0m [0m"0.0.0.0/0",
+                ]
+              [32m+[0m [0mdescription      = ""
+              [32m+[0m [0mfrom_port        = 80
+              [32m+[0m [0mipv6_cidr_blocks = []
+              [32m+[0m [0mprefix_list_ids  = []
+              [32m+[0m [0mprotocol         = "tcp"
+              [32m+[0m [0msecurity_groups  = []
+              [32m+[0m [0mself             = false
+              [32m+[0m [0mto_port          = 80
+            },
+        ]
+      [32m+[0m [0m[1m[0mname[0m[0m                   = "demoaccess"
+      [32m+[0m [0m[1m[0mname_prefix[0m[0m            = (known after apply)
+      [32m+[0m [0m[1m[0mowner_id[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mrevoke_rules_on_delete[0m[0m = false
+      [32m+[0m [0m[1m[0mtags_all[0m[0m               = (known after apply)
+      [32m+[0m [0m[1m[0mvpc_id[0m[0m                 = "vpc-0a393a781fb001f71"
+    }
+
+[0m[1mPlan:[0m 2 to add, 0 to change, 0 to destroy.
+[0m[0m
+[1mChanges to Outputs:[0m[0m
+  [32m+[0m [0m[1m[0minstance_ip[0m[0m = (known after apply)
+[0m[1maws_security_group.demoaccess: Creating...[0m[0m
+[0m[1maws_security_group.demoaccess: Creation complete after 3s [id=sg-0af5a8ffcb26046d4][0m
+[0m[1maws_instance.web: Creating...[0m[0m
+[0m[1maws_instance.web: Still creating... [10s elapsed][0m[0m
+[0m[1maws_instance.web: Still creating... [20s elapsed][0m[0m
+[0m[1maws_instance.web: Still creating... [30s elapsed][0m[0m
+[0m[1maws_instance.web: Still creating... [40s elapsed][0m[0m
+[0m[1maws_instance.web: Provisioning with 'remote-exec'...[0m[0m
+[0m[1maws_instance.web (remote-exec):[0m [0mConnecting to remote host via SSH...
+[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 54.91.25.63
+[0m[1maws_instance.web (remote-exec):[0m [0m  User: ubuntu
+[0m[1maws_instance.web (remote-exec):[0m [0m  Password: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  Private key: true
+[0m[1maws_instance.web (remote-exec):[0m [0m  Certificate: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  SSH Agent: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  Checking Host Key: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  Target Platform: unix
+[0m[1maws_instance.web: Still creating... [50s elapsed][0m[0m
+[0m[1maws_instance.web (remote-exec):[0m [0mConnecting to remote host via SSH...
+[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 54.91.25.63
+[0m[1maws_instance.web (remote-exec):[0m [0m  User: ubuntu
+[0m[1maws_instance.web (remote-exec):[0m [0m  Password: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  Private key: true
+[0m[1maws_instance.web (remote-exec):[0m [0m  Certificate: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  SSH Agent: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  Checking Host Key: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  Target Platform: unix
+[0m[1maws_instance.web (remote-exec):[0m [0mConnecting to remote host via SSH...
+[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 54.91.25.63
+[0m[1maws_instance.web (remote-exec):[0m [0m  User: ubuntu
+[0m[1maws_instance.web (remote-exec):[0m [0m  Password: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  Private key: true
+[0m[1maws_instance.web (remote-exec):[0m [0m  Certificate: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  SSH Agent: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  Checking Host Key: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  Target Platform: unix
+[0m[1maws_instance.web (remote-exec):[0m [0mConnecting to remote host via SSH...
+[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 54.91.25.63
+[0m[1maws_instance.web (remote-exec):[0m [0m  User: ubuntu
+[0m[1maws_instance.web (remote-exec):[0m [0m  Password: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  Private key: true
+[0m[1maws_instance.web (remote-exec):[0m [0m  Certificate: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  SSH Agent: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  Checking Host Key: false
+[0m[1maws_instance.web (remote-exec):[0m [0m  Target Platform: unix
+[0m[1maws_instance.web (remote-exec):[0m [0mConnected!
+[0m[1maws_instance.web: Still creating... [1m0s elapsed][0m[0m
+[0m[1maws_instance.web (remote-exec):[0m [0mip-172-31-25-124
+[0m[1maws_instance.web: Provisioning with 'local-exec'...[0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mExecuting: ["/bin/sh" "-c" "echo 54.91.25.63 > myhosts"]
+[0m[1maws_instance.web: Provisioning with 'local-exec'...[0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mExecuting: ["/bin/sh" "-c" "ansible-playbook -i myhosts --user ubuntu --private-key /home/labsuser/assign/Demokey.pem wordpress.yml"]
+
+[0m[1maws_instance.web (local-exec):[0m [0mPLAY [Install Wordpress] *******************************************************
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Gathering Facts] *********************************************************
+[0m[1maws_instance.web (local-exec):[0m [0mok: [54.91.25.63]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [wordpress : install apache] **********************************************
+[0m[1maws_instance.web: Still creating... [1m10s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mfatal: [54.91.25.63]: FAILED! => {"cache_update_time": 1619825195, "cache_updated": false, "changed": false, "msg": "'/usr/bin/apt-get -y -o \"Dpkg::Options::=--force-confdef\" -o \"Dpkg::Options::=--force-confold\"       install 'apache2'' failed: E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2-bin_2.4.41-4ubuntu3.1_amd64.deb  404  Not Found [IP: 54.165.17.230 80]\nE: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2-data_2.4.41-4ubuntu3.1_all.deb  404  Not Found [IP: 54.165.17.230 80]\nE: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2-utils_2.4.41-4ubuntu3.1_amd64.deb  404  Not Found [IP: 54.165.17.230 80]\nE: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.41-4ubuntu3.1_amd64.deb  404  Not Found [IP: 54.165.17.230 80]\nE: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?\n", "rc": 100, "stderr": "E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2-bin_2.4.41-4ubuntu3.1_amd64.deb  404  Not Found [IP: 54.165.17.230 80]\nE: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2-data_2.4.41-4ubuntu3.1_all.deb  404  Not Found [IP: 54.165.17.230 80]\nE: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2-utils_2.4.41-4ubuntu3.1_amd64.deb  404  Not Found [IP: 54.165.17.230 80]\nE: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.41-4ubuntu3.1_amd64.deb  404  Not Found [IP: 54.165.17.230 80]\nE: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?\n", "stderr_lines": ["E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2-bin_2.4.41-4ubuntu3.1_amd64.deb  404  Not Found [IP: 54.165.17.230 80]", "E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2-data_2.4.41-4ubuntu3.1_all.deb  404  Not Found [IP: 54.165.17.230 80]", "E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2-utils_2.4.41-4ubuntu3.1_amd64.deb  404  Not Found [IP: 54.165.17.230 80]", "E: Failed to fetch http://security.ubuntu.com/ubuntu/pool/main/a/apache2/apache2_2.4.41-4ubuntu3.1_amd64.deb  404  Not Found [IP: 54.165.17.230 80]", "E: Unable to fetch some archives, maybe run apt-get update or try with --fix-missing?"], "stdout": "Reading package lists...\nBuilding dependency tree...\nReading state information...\nThe following additional packages will be installed:\n  apache2-bin apache2-data apache2-utils libapr1 libaprutil1\n  libaprutil1-dbd-sqlite3 libaprutil1-ldap libjansson4 liblua5.2-0 ssl-cert\nSuggested packages:\n  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser\n  openssl-blacklist\nThe following NEW packages will be installed:\n  apache2 apache2-bin apache2-data apache2-utils libapr1 libaprutil1\n  libaprutil1-dbd-sqlite3 libaprutil1-ldap libjansson4 liblua5.2-0 ssl-cert\n0 upgraded, 11 newly installed, 0 to remove and 0 not upgraded.\nNeed to get 1,865 kB of archives.\nAfter this operation, 8,080 kB of additional disk space will be used.\nGet:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libapr1 amd64 1.6.5-1ubuntu1 [91.4 kB]\nGet:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libaprutil1 amd64 1.6.1-4ubuntu2 [84.7 kB]\nGet:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-4ubuntu2 [10.5 kB]\nGet:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libaprutil1-ldap amd64 1.6.1-4ubuntu2 [8,736 B]\nGet:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libjansson4 amd64 2.12-1build1 [28.9 kB]\nGet:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 liblua5.2-0 amd64 5.2.4-1.1build3 [106 kB]\nIgn:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 apache2-bin amd64 2.4.41-4ubuntu3.1\nIgn:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 apache2-data all 2.4.41-4ubuntu3.1\nIgn:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 apache2-utils amd64 2.4.41-4ubuntu3.1\nErr:7 http://security.ubuntu.com/ubuntu focal-updates/main amd64 apache2-bin amd64 2.4.41-4ubuntu3.1\n  404  Not Found [IP: 54.165.17.230 80]\nIgn:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 apache2 amd64 2.4.41-4ubuntu3.1\nGet:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 ssl-cert all 1.0.39 [17.0 kB]\nErr:8 http://security.ubuntu.com/ubuntu focal-updates/main amd64 apache2-data all 2.4.41-4ubuntu3.1\n  404  Not Found [IP: 54.165.17.230 80]\nErr:9 http://security.ubuntu.com/ubuntu focal-updates/main amd64 apache2-utils amd64 2.4.41-4ubuntu3.1\n  404  Not Found [IP: 54.165.17.230 80]\nErr:10 http://security.ubuntu.com/ubuntu focal-updates/main amd64 apache2 amd64 2.4.41-4ubuntu3.1\n  404  Not Found [IP: 54.165.17.230 80]\nFetched 347 kB in 0s (3,074 kB/s)\n", "stdout_lines": ["Reading package lists...", "Building dependency tree...", "Reading state information...", "The following additional packages will be installed:", "  apache2-bin apache2-data apache2-utils libapr1 libaprutil1", "  libaprutil1-dbd-sqlite3 libaprutil1-ldap libjansson4 liblua5.2-0 ssl-cert", "Suggested packages:", "  apache2-doc apache2-suexec-pristine | apache2-suexec-custom www-browser", "  openssl-blacklist", "The following NEW packages will be installed:", "  apache2 apache2-bin apache2-data apache2-utils libapr1 libaprutil1", "  libaprutil1-dbd-sqlite3 libaprutil1-ldap libjansson4 liblua5.2-0 ssl-cert", "0 upgraded, 11 newly installed, 0 to remove and 0 not upgraded.", "Need to get 1,865 kB of archives.", "After this operation, 8,080 kB of additional disk space will be used.", "Get:1 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libapr1 amd64 1.6.5-1ubuntu1 [91.4 kB]", "Get:2 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libaprutil1 amd64 1.6.1-4ubuntu2 [84.7 kB]", "Get:3 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libaprutil1-dbd-sqlite3 amd64 1.6.1-4ubuntu2 [10.5 kB]", "Get:4 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libaprutil1-ldap amd64 1.6.1-4ubuntu2 [8,736 B]", "Get:5 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 libjansson4 amd64 2.12-1build1 [28.9 kB]", "Get:6 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 liblua5.2-0 amd64 5.2.4-1.1build3 [106 kB]", "Ign:7 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 apache2-bin amd64 2.4.41-4ubuntu3.1", "Ign:8 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 apache2-data all 2.4.41-4ubuntu3.1", "Ign:9 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 apache2-utils amd64 2.4.41-4ubuntu3.1", "Err:7 http://security.ubuntu.com/ubuntu focal-updates/main amd64 apache2-bin amd64 2.4.41-4ubuntu3.1", "  404  Not Found [IP: 54.165.17.230 80]", "Ign:10 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal-updates/main amd64 apache2 amd64 2.4.41-4ubuntu3.1", "Get:11 http://us-east-1.ec2.archive.ubuntu.com/ubuntu focal/main amd64 ssl-cert all 1.0.39 [17.0 kB]", "Err:8 http://security.ubuntu.com/ubuntu focal-updates/main amd64 apache2-data all 2.4.41-4ubuntu3.1", "  404  Not Found [IP: 54.165.17.230 80]", "Err:9 http://security.ubuntu.com/ubuntu focal-updates/main amd64 apache2-utils amd64 2.4.41-4ubuntu3.1", "  404  Not Found [IP: 54.165.17.230 80]", "Err:10 http://security.ubuntu.com/ubuntu focal-updates/main amd64 apache2 amd64 2.4.41-4ubuntu3.1", "  404  Not Found [IP: 54.165.17.230 80]", "Fetched 347 kB in 0s (3,074 kB/s)"]}
+
+[0m[1maws_instance.web (local-exec):[0m [0mPLAY RECAP *********************************************************************
+[0m[1maws_instance.web (local-exec):[0m [0m54.91.25.63                : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+

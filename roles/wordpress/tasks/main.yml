@@ -1,0 +1,119 @@
+---
+- name: install apache
+  ansible.builtin.apt:
+    name: apache2
+    state: present
+- name: Enable mod rewrite
+  apache2_module:
+    state: present
+    name: rewrite
+- name: enable the use of .htaccess files in any projects
+  copy:
+    src: enable_htaccess.conf
+    dest: /etc/apache2/sites-available/enable_htaccess.conf
+- name: enable the .htaccess vhost
+  file:
+    src: /etc/apache2/sites-available/enable_htaccess.conf
+    dest: /etc/apache2/sites-enabled/enable_htaccess.conf
+    state: link
+
+- name: install PHP
+  ansible.builtin.apt:
+    pkg:
+      - php
+      - php-mysql
+      - php-common
+      - php-mysql
+      - php-tidy
+      - php-xml
+      - php-xmlrpc
+      - php-mbstring
+      - php-memcached
+      - php-curl
+      - php-zip
+
+- name: Install MySQL Python
+  ansible.builtin.apt:
+    name: python-mysqldb
+    state: present
+- name: install MySQL Server
+  ansible.builtin.apt:
+    name: mysql-server
+    state: present
+- name: install MySQL Client
+  ansible.builtin.apt:
+    name: mysql-client
+    state: present
+- name: install MySQL Common
+  ansible.builtin.apt:
+    name: mysql-common
+    state: present
+- name: ensure MySQL always starts
+  service:
+    name: mysql
+    state: started
+    enabled: yes
+- name: Concantenate the install and directory into a single variable
+  set_fact:
+    path: "{{wp_install_path}}/{{wp_directory_name}}"
+
+- name: Only install WordPress when there is no index.php in the path
+  stat:
+    path: "{{path}}/index.php"
+  register: stat_result
+
+- name: Ensure that installation directory exists
+  file: path={{path}} state=directory
+  when: stat_result.stat.exists == False
+
+- name: Download Latest Version to /tmp
+  get_url: url=https://wordpress.org/latest.tar.gz force=no dest=/tmp/wordpress.tar.gz
+  when: stat_result.stat.exists == False
+
+- name: Extract archive
+  unarchive: src=/tmp/wordpress.tar.gz dest=/tmp copy=no
+  when: stat_result.stat.exists == False
+
+
+- name: Move extracted directory to {{path}}
+  shell: cp -r -n /tmp/wordpress/* {{path}}
+  when: stat_result.stat.exists == False
+
+
+- name: Remove wordpress.tar.gz
+  file: path=/tmp/wordpress.tar.gz state=absent
+  when: stat_result.stat.exists == False
+
+- name: Fetch random salts for WordPress config
+  local_action: command curl https://api.wordpress.org/secret-key/1.1/salt/
+  register: "wp_salt"
+  become: no
+  become_method: sudo
+
+
+- name: Copy WordPress config file
+  template: src=wp-config.php dest={{path}}
+
+- name: Change ownership of installation directory
+  file: path={{path}} owner=www-data group=www-data  state=directory recurse=yes setype=httpd_sys_content_t
+  when: stat_result.stat.exists == False
+
+- name: Change ownership of wp-content directory
+  file: path={{path}}/wp-content/ owner=www-data group=www-data mode=755 state=directory recurse=yes
+  when: stat_result.stat.exists == False
+
+
+- name: Create a our WordPress database
+  mysql_db:
+    config_file: "/etc/mysql/my.cnf"
+    name: "{{wp_db_name}}"
+    state: present
+
+- name: Create a new database user and password
+  mysql_user:
+    config_file: "/etc/mysql/my.cnf"
+    name: "{{wp_db_username}}"
+    password: "{{wp_db_password}}"
+    priv: '{{wp_db_name}}.*:ALL'
+    state: present        
+
