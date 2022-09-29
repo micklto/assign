@@ -1,4 +1,14 @@
 ---
+- name: apt update and apt upgrade, install packages
+  ansible.builtin.apt:
+    update_cache: yes
+    upgrade: yes
+- name: Update to use aptitude
+  ansible.builtin.apt:
+    name: aptitude
+    update_cache: yes
+    state: latest
+    force_apt_get: yes
 - name: install apache
   ansible.builtin.apt:
     name: apache2
@@ -34,7 +44,7 @@
 
 - name: Install MySQL Python
   ansible.builtin.apt:
-    name: python-mysqldb
+    name: python3-mysqldb
     state: present
 - name: install MySQL Server
   ansible.builtin.apt:
