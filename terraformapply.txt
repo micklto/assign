@@ -184,14 +184,14 @@ Terraform will perform the following actions:
 [1mChanges to Outputs:[0m[0m
   [32m+[0m [0m[1m[0minstance_ip[0m[0m = (known after apply)
 [0m[1maws_security_group.demoaccess: Creating...[0m[0m
-[0m[1maws_security_group.demoaccess: Creation complete after 3s [id=sg-00f4bcadff818a4ed][0m
+[0m[1maws_security_group.demoaccess: Creation complete after 3s [id=sg-00925dcaba4a49e7e][0m
 [0m[1maws_instance.web: Creating...[0m[0m
 [0m[1maws_instance.web: Still creating... [10s elapsed][0m[0m
 [0m[1maws_instance.web: Still creating... [20s elapsed][0m[0m
 [0m[1maws_instance.web: Still creating... [30s elapsed][0m[0m
 [0m[1maws_instance.web: Provisioning with 'remote-exec'...[0m[0m
 [0m[1maws_instance.web (remote-exec):[0m [0mConnecting to remote host via SSH...
-[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 3.87.14.113
+[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 52.91.231.17
 [0m[1maws_instance.web (remote-exec):[0m [0m  User: ubuntu
 [0m[1maws_instance.web (remote-exec):[0m [0m  Password: false
 [0m[1maws_instance.web (remote-exec):[0m [0m  Private key: true
@@ -200,7 +200,7 @@ Terraform will perform the following actions:
 [0m[1maws_instance.web (remote-exec):[0m [0m  Checking Host Key: false
 [0m[1maws_instance.web (remote-exec):[0m [0m  Target Platform: unix
 [0m[1maws_instance.web (remote-exec):[0m [0mConnecting to remote host via SSH...
-[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 3.87.14.113
+[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 52.91.231.17
 [0m[1maws_instance.web (remote-exec):[0m [0m  User: ubuntu
 [0m[1maws_instance.web (remote-exec):[0m [0m  Password: false
 [0m[1maws_instance.web (remote-exec):[0m [0m  Private key: true
@@ -209,7 +209,7 @@ Terraform will perform the following actions:
 [0m[1maws_instance.web (remote-exec):[0m [0m  Checking Host Key: false
 [0m[1maws_instance.web (remote-exec):[0m [0m  Target Platform: unix
 [0m[1maws_instance.web (remote-exec):[0m [0mConnecting to remote host via SSH...
-[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 3.87.14.113
+[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 52.91.231.17
 [0m[1maws_instance.web (remote-exec):[0m [0m  User: ubuntu
 [0m[1maws_instance.web (remote-exec):[0m [0m  Password: false
 [0m[1maws_instance.web (remote-exec):[0m [0m  Private key: true
@@ -219,17 +219,7 @@ Terraform will perform the following actions:
 [0m[1maws_instance.web (remote-exec):[0m [0m  Target Platform: unix
 [0m[1maws_instance.web: Still creating... [40s elapsed][0m[0m
 [0m[1maws_instance.web (remote-exec):[0m [0mConnecting to remote host via SSH...
-[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 3.87.14.113
-[0m[1maws_instance.web (remote-exec):[0m [0m  User: ubuntu
-[0m[1maws_instance.web (remote-exec):[0m [0m  Password: false
-[0m[1maws_instance.web (remote-exec):[0m [0m  Private key: true
-[0m[1maws_instance.web (remote-exec):[0m [0m  Certificate: false
-[0m[1maws_instance.web (remote-exec):[0m [0m  SSH Agent: false
-[0m[1maws_instance.web (remote-exec):[0m [0m  Checking Host Key: false
-[0m[1maws_instance.web (remote-exec):[0m [0m  Target Platform: unix
-[0m[1maws_instance.web: Still creating... [50s elapsed][0m[0m
-[0m[1maws_instance.web (remote-exec):[0m [0mConnecting to remote host via SSH...
-[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 3.87.14.113
+[0m[1maws_instance.web (remote-exec):[0m [0m  Host: 52.91.231.17
 [0m[1maws_instance.web (remote-exec):[0m [0m  User: ubuntu
 [0m[1maws_instance.web (remote-exec):[0m [0m  Password: false
 [0m[1maws_instance.web (remote-exec):[0m [0m  Private key: true
@@ -238,63 +228,128 @@ Terraform will perform the following actions:
 [0m[1maws_instance.web (remote-exec):[0m [0m  Checking Host Key: false
 [0m[1maws_instance.web (remote-exec):[0m [0m  Target Platform: unix
 [0m[1maws_instance.web (remote-exec):[0m [0mConnected!
-[0m[1maws_instance.web (remote-exec):[0m [0mip-172-31-92-59
+[0m[1maws_instance.web (remote-exec):[0m [0mip-172-31-94-176
 [0m[1maws_instance.web: Provisioning with 'local-exec'...[0m[0m
-[0m[1maws_instance.web (local-exec):[0m [0mExecuting: ["/bin/sh" "-c" "echo 3.87.14.113 > myhosts"]
+[0m[1maws_instance.web (local-exec):[0m [0mExecuting: ["/bin/sh" "-c" "echo 52.91.231.17 > myhosts"]
 [0m[1maws_instance.web: Provisioning with 'local-exec'...[0m[0m
-[0m[1maws_instance.web (local-exec):[0m [0mExecuting: ["/bin/sh" "-c" "ansible-playbook -i myhosts --user ubuntu --private-key /home/labsuser/assign/Demokey.pem wordpress.yml"]
+[0m[1maws_instance.web (local-exec):[0m [0mExecuting: ["/bin/sh" "-c" "ansible-playbook -i myhosts --user ubuntu --private-key /home/labsuser/assign/Demokey.pem playbook.yml"]
 
-[0m[1maws_instance.web (local-exec):[0m [0mPLAY [Install Wordpress] *******************************************************
+[0m[1maws_instance.web (local-exec):[0m [0mPLAY [all] *********************************************************************
 
 [0m[1maws_instance.web (local-exec):[0m [0mTASK [Gathering Facts] *********************************************************
-[0m[1maws_instance.web (local-exec):[0m [0mok: [3.87.14.113]
+[0m[1maws_instance.web: Still creating... [50s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mok: [52.91.231.17]
 
-[0m[1maws_instance.web (local-exec):[0m [0mTASK [wordpress : apt update and apt upgrade, install packages] ****************
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Install prerequisites] ***************************************************
 [0m[1maws_instance.web: Still creating... [1m0s elapsed][0m[0m
 [0m[1maws_instance.web: Still creating... [1m10s elapsed][0m[0m
 [0m[1maws_instance.web: Still creating... [1m20s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Install LAMP Packages] ***************************************************
 [0m[1maws_instance.web: Still creating... [1m30s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=apache2)
 [0m[1maws_instance.web: Still creating... [1m40s elapsed][0m[0m
 [0m[1maws_instance.web: Still creating... [1m50s elapsed][0m[0m
 [0m[1maws_instance.web: Still creating... [2m0s elapsed][0m[0m
 [0m[1maws_instance.web: Still creating... [2m10s elapsed][0m[0m
 [0m[1maws_instance.web: Still creating... [2m20s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=mysql-server)
 [0m[1maws_instance.web: Still creating... [2m30s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=python3-pymysql)
 [0m[1maws_instance.web: Still creating... [2m40s elapsed][0m[0m
 [0m[1maws_instance.web: Still creating... [2m50s elapsed][0m[0m
 [0m[1maws_instance.web: Still creating... [3m0s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=php)
 [0m[1maws_instance.web: Still creating... [3m10s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=php-mysql)
 [0m[1maws_instance.web: Still creating... [3m20s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=libapache2-mod-php)
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Install PHP Extensions] **************************************************
 [0m[1maws_instance.web: Still creating... [3m30s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=php-curl)
 [0m[1maws_instance.web: Still creating... [3m40s elapsed][0m[0m
 [0m[1maws_instance.web: Still creating... [3m50s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=php-gd)
 [0m[1maws_instance.web: Still creating... [4m0s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=php-mbstring)
 [0m[1maws_instance.web: Still creating... [4m10s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=php-xml)
 [0m[1maws_instance.web: Still creating... [4m20s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=php-xmlrpc)
 [0m[1maws_instance.web: Still creating... [4m30s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=php-soap)
 [0m[1maws_instance.web: Still creating... [4m40s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=php-intl)
 [0m[1maws_instance.web: Still creating... [4m50s elapsed][0m[0m
-[0m[1maws_instance.web (local-exec):[0m [0mchanged: [3.87.14.113]
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17] => (item=php-zip)
 
-[0m[1maws_instance.web (local-exec):[0m [0mTASK [wordpress : Update to use aptitude] **************************************
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Create document root] ****************************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Set up Apache VirtualHost] ***********************************************
 [0m[1maws_instance.web: Still creating... [5m0s elapsed][0m[0m
-[0m[1maws_instance.web (local-exec):[0m [0mchanged: [3.87.14.113]
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
 
-[0m[1maws_instance.web (local-exec):[0m [0mTASK [wordpress : install apache] **********************************************
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Enable rewrite module] ***************************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Enable new site] *********************************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Disable default Apache site] *********************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Set the root password] ***************************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Remove all anonymous user accounts] **************************************
 [0m[1maws_instance.web: Still creating... [5m10s elapsed][0m[0m
-[0m[1maws_instance.web (local-exec):[0m [0mchanged: [3.87.14.113]
+[0m[1maws_instance.web (local-exec):[0m [0mok: [52.91.231.17]
 
-[0m[1maws_instance.web (local-exec):[0m [0mTASK [wordpress : Enable mod rewrite] ******************************************
-[0m[1maws_instance.web (local-exec):[0m [0mchanged: [3.87.14.113]
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Remove the MySQL test database] ******************************************
+[0m[1maws_instance.web (local-exec):[0m [0mok: [52.91.231.17]
 
-[0m[1maws_instance.web (local-exec):[0m [0mTASK [wordpress : enable the use of .htaccess files in any projects] ***********
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Creates database for WordPress] ******************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Create MySQL user for WordPress] *****************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [UFW - Allow HTTP on port 80] *********************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Download and unpack latest WordPress] ************************************
 [0m[1maws_instance.web: Still creating... [5m20s elapsed][0m[0m
-[0m[1maws_instance.web (local-exec):[0m [0mchanged: [3.87.14.113]
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
 
-[0m[1maws_instance.web (local-exec):[0m [0mTASK [wordpress : virtual host] ************************************************
-[0m[1maws_instance.web (local-exec):[0m [0mAn exception occurred during task execution. To see the full traceback, use -vvv. The error was: ansible.errors.AnsibleUndefinedVariable: 'path' is undefined
-[0m[1maws_instance.web (local-exec):[0m [0mfatal: [3.87.14.113]: FAILED! => {"changed": false, "msg": "AnsibleUndefinedVariable: 'path' is undefined"}
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Set ownership] ***********************************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Set permissions for directories] *****************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Set permissions for files] ***********************************************
+[0m[1maws_instance.web: Still creating... [5m30s elapsed][0m[0m
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mTASK [Set up wp-config] ********************************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mRUNNING HANDLER [Reload Apache] ************************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
+
+[0m[1maws_instance.web (local-exec):[0m [0mRUNNING HANDLER [Restart Apache] ***********************************************
+[0m[1maws_instance.web (local-exec):[0m [0mchanged: [52.91.231.17]
 
 [0m[1maws_instance.web (local-exec):[0m [0mPLAY RECAP *********************************************************************
-[0m[1maws_instance.web (local-exec):[0m [0m3.87.14.113                : ok=6    changed=5    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0
+[0m[1maws_instance.web (local-exec):[0m [0m52.91.231.17               : ok=22   changed=19   unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 
+[0m[1maws_instance.web: Creation complete after 5m40s [id=i-0b244db8b3796d7ce][0m
+[0m[1m[32m
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+[0m[0m[1m[32m
+Outputs:
+
+[0minstance_ip = "52.91.231.17"
